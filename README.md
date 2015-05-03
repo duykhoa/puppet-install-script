@@ -67,4 +67,5 @@ gem install passenger
 passenger-install-nginx-module
 ``
 
-13. 
+13. add gem install bundler (puppet)
+14. write capistrano script
