@@ -47,7 +47,7 @@ package {
 package {
   "wget":
     ensure => present
-}nn
+}
 
 include rvm
 
