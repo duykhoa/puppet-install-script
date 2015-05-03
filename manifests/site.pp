@@ -3,7 +3,42 @@ Exec {
 }
 
 exec { "apt-get update": }
-
+package {
+  "jlibcurl4-doc":
+    ensure => present
+}
+package {
+  "jlibcurl3-dbg":
+    ensure => present
+}
+package {
+  "jlibidn11-dev":
+    ensure => present
+}
+package {
+  "jlibkrb5-dev":
+    ensure => present
+}
+package {
+  "jlibldap2-dev":
+    ensure => present
+}
+package {
+  "jlibrtmp-dev":
+    ensure => present
+}
+package {
+  "jlibssl-dev":
+    ensure => present
+}
+package {
+  "jpkg-config":
+    ensure => present
+}
+package {
+  "jzlib1g-dev":
+    ensure => present
+}
 package {
   "git":
     ensure => present
@@ -12,7 +47,7 @@ package {
 package {
   "wget":
     ensure => present
-}
+}nn
 
 include rvm
 
