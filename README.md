@@ -55,4 +55,16 @@ then change password:
 
 ``alter user postgres with password '123456'``
 
-10. update gem & install nginx, passenger
+10. update gem
+
+``gem update``
+
+11. swap space (follow https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04)
+12. install passenger nginx
+
+``
+gem install passenger
+passenger-install-nginx-module
+``
+
+13. 
