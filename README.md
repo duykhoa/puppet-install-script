@@ -67,5 +67,8 @@ gem install passenger
 passenger-install-nginx-module
 ``
 
+add init script to reload start, restart nginx
+https://www.linode.com/docs/websites/nginx/websites-with-nginx-on-ubuntu-12-04-lts-precise-pangolin/#download-and-compile-nginx
+
 13. add gem install bundler (puppet)
 14. write capistrano script
