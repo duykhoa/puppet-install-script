@@ -131,5 +131,3 @@ package {
   "newrelic-sysmond":
     ensure   => present,
 }
-
-exec { "wget -O- https://download.newrelic.com/548C16BF.gpg | apt-key add -": }
