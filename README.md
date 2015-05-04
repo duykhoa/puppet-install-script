@@ -23,7 +23,7 @@
   locale-gen en_US.UTF-8
   dpkg-reconfigure locales
   ```
-  to fix perl errors
+  to fix perl errors (may need reboot !!! :octocat:)
 - Run the script
 
   ``puppet apply --verbose site.pp``
@@ -41,10 +41,10 @@
   follow this: 
 
   ```
-  Port 22 # maychange -> remember to enable it :)
-  PermitRootLogin no
+  Port 22 #maychange -> remember to enable it in ufw :trollface:
+  PermitRootLogin no #not allow root login
   UseDNS no
-  AllowUsers demo
+  AllowUsers demo #user can login :smiley:
   ```
   then ``reload ssh`` to reload (should open a new ssh connection before do it :trollface:)
 - Check postgresql
