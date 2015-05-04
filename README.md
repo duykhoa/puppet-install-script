@@ -31,6 +31,7 @@
   ``passwd deploy``
 - Add deploy permission:
   ``visudo``
+
   *NOTES*: may fix the default editor first
     ``vi ~/.profile (or ~/.bashrc): export EDITOR='vi'``
   add this ``demo    ALL=(ALL:ALL) ALL``
