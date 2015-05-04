@@ -1,74 +1,67 @@
 # puppet-install-script
 
-1. install wget
+## Manual tasks (will reduce soon)
+1. Install wget 
 
-``apt-get install wget``
+  ``apt-get install wget``
+- Install puppet
 
-2. install puppet
+  ``apt-get install puppet``
+- Print puppet module folder
+  ``puppet config print modulepath``
+- Clone or raw ``wget https://raw.githubusercontent.com/duykhoa/puppet-install-script/master/manifests/site.pp``
+- Install module rvm, locale, elasticsearch, java (if cloning, just copy them to ``sudo cp ./modules/* /etc/puppet/modules``
+- Run these command
 
-apt-get install puppet
+  ```
+  export LANGUAGE=en_US.UTF-8
+  export LANG=en_US.UTF-8
+  export LC_ALL=en_US.UTF-8
+  locale-gen en_US.UTF-8
+  dpkg-reconfigure locales
+  ```
+  to fix perl errors
+- Run the script
 
-3. print puppet module folder
+  ``puppet apply --verbose site.pp``
+- Change deploy user password
+  ``passwd deploy``
+- Add deploy permission:
+  ``visudo``
+  *NOTES*: may fix the default editor first
+    ``vi ~/.profile (or ~/.bashrc): export EDITOR='vi'``
+- ssh privilege
 
-puppet config print modulepath
+  ``vi /etc/ssh/sshd_config``
 
-4. install module rvm, locale
-```
-export LANGUAGE=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-locale-gen en_US.UTF-8
-dpkg-reconfigure locales
-```
+  follow this: 
 
-to fix perl errors
+  ```
+  Port 22 # maychange -> remember to enable it :)
+  PermitRootLogin no
+  UseDNS no
+  AllowUsers demo
+  ```
+  then ``reload ssh`` to reload (should open a new ssh connection before do it :trollface:)
+- Check postgresql
 
-5. run the script
+  ``sudo -u postgres psql``
 
-puppet apply --verbose site.pp
+  then change password:
 
-6. change deploy user password
+  ``alter user postgres with password '123456'``
+- Update gem
 
-passwd deploy
+  ``gem update``
+- Add Swap space (follow https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04)
+- Install passenger nginx
 
-7. add deploy permission:
+  ``
+    gem install passenger
+    passenger-install-nginx-module
+  ``
 
-may fix the default editor first
-``vi ~/.profile (or ~/.bashrc): export EDITOR='vi'``
-
-8. ssh privilege
-
-``vi /etc/ssh/sshd_config``
-
-```
-Port 22
-PermitRootLogin no
-UseDNS no
-AllowUsers demo
-```
-
-9. check postgresql
-
-``sudo -u postgres psql``
-
-then change password:
-
-``alter user postgres with password '123456'``
-
-10. update gem
-
-``gem update``
-
-11. swap space (follow https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04)
-12. install passenger nginx
-
-``
-gem install passenger
-passenger-install-nginx-module
-``
-
-add init script to reload start, restart nginx
-https://www.linode.com/docs/websites/nginx/websites-with-nginx-on-ubuntu-12-04-lts-precise-pangolin/#download-and-compile-nginx
-
-13. add gem install bundler (puppet)
-14. write capistrano script
+  *NOTES* add init script to reload start, restart nginx
+  https://www.linode.com/docs/websites/nginx/websites-with-nginx-on-ubuntu-12-04-lts-precise-pangolin/#download-and-compile-nginx
+- Add gem install bundler (puppet)
+- write capistrano script
