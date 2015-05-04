@@ -40,6 +40,11 @@ package {
   "jzlib1g-dev":
     ensure => present
 }
+
+package {
+  "libpq-dev":
+    ensure => present
+}
 package {
   "git":
     ensure => present
