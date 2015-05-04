@@ -57,10 +57,10 @@
 - Add Swap space (follow https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04)
 - Install passenger nginx
 
-  ``
+  ```
     gem install passenger
     passenger-install-nginx-module
-  ``
+  ```
 
   *NOTES* add init script to reload start, restart nginx
   https://www.linode.com/docs/websites/nginx/websites-with-nginx-on-ubuntu-12-04-lts-precise-pangolin/#download-and-compile-nginx
