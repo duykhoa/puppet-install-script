@@ -3,6 +3,7 @@ Exec {
 }
 
 exec { "apt-get update": }
+
 package {
   "jlibcurl4-doc":
     ensure => present
@@ -103,7 +104,7 @@ package {
 service {
   "ufw":
     ensure => running,
-    enable => true
+    enable => true # doesn't work
 }
 
 exec { "ufw allow 22": }
@@ -116,7 +117,13 @@ package {
     provider => "gem"
 }
 
+class { 'elasticsearch':
+    package_url    => 'https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.4.2.deb',
+      java_install => true
+}
+
 user { "deploy":
   ensure   => present,
   password => "5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8" # SHA1 of "password"
 }
+
