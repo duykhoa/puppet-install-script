@@ -127,3 +127,9 @@ user { "deploy":
   password => "5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8" # SHA1 of "password"
 }
 
+package {
+  "newrelic-sysmond":
+    ensure   => present,
+}
+
+exec { "wget -O- https://download.newrelic.com/548C16BF.gpg | apt-key add -": }
