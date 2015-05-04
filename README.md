@@ -9,8 +9,11 @@
   ``apt-get install puppet``
 - Print puppet module folder
   ``puppet config print modulepath``
-- Clone or raw ``wget https://raw.githubusercontent.com/duykhoa/puppet-install-script/master/manifests/site.pp``
-- Install module rvm, locale, elasticsearch, java (if cloning, just copy them to ``sudo cp ./modules/* /etc/puppet/modules``
+- Clone or raw 
+
+  ``wget https://raw.githubusercontent.com/duykhoa/puppet-install-script/master/manifests/site.pp``
+- Install module rvm, locale, elasticsearch, java (if cloning, just copy them to 
+  ``sudo cp ./modules/* /etc/puppet/modules``
 - Run these command
 
   ```
@@ -54,7 +57,7 @@
 - Update gem
 
   ``gem update``
-- Add Swap space (follow https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04)
+- Add Swap space (follow [Swap tut](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04))
 - Install passenger nginx
 
   ```
@@ -63,6 +66,6 @@
   ```
 
   *NOTES* add init script to reload start, restart nginx
-  https://www.linode.com/docs/websites/nginx/websites-with-nginx-on-ubuntu-12-04-lts-precise-pangolin/#download-and-compile-nginx
+  [Use this tut](https://www.linode.com/docs/websites/nginx/websites-with-nginx-on-ubuntu-12-04-lts-precise-pangolin/#download-and-compile-nginx)
 - Add gem install bundler (puppet)
 - write capistrano script
