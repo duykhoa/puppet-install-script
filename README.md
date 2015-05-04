@@ -41,12 +41,13 @@
   follow this: 
 
   ```
-  Port 22 #maychange -> remember to enable it in ufw :trollface:
+  Port 22 #may change, remember to enable in ufw, otherwise you have a bit trouble
   PermitRootLogin no #not allow root login
   UseDNS no
   AllowUsers demo #user can login :smiley:
   ```
   then ``reload ssh`` to reload (should open a new ssh connection before do it :trollface:)
+- ufw may not enable, call ``ufw status`` to check, ``ufw enable`` to enable
 - Check postgresql
 
   ``sudo -u postgres psql``
