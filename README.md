@@ -30,6 +30,7 @@
   ``visudo``
   *NOTES*: may fix the default editor first
     ``vi ~/.profile (or ~/.bashrc): export EDITOR='vi'``
+  add this ``demo    ALL=(ALL:ALL) ALL``
 - ssh privilege
 
   ``vi /etc/ssh/sshd_config``
