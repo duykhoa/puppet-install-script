@@ -74,11 +74,6 @@ package {
 }
 
 package {
-  "openjdk-7-jre-headless":
-    ensure => true
-}
-
-package {
   "libcurl4-openssl-dev":
     ensure => present
 }
