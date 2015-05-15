@@ -14,6 +14,8 @@
   ``wget https://raw.githubusercontent.com/duykhoa/puppet-install-script/master/manifests/site.pp``
 - Install module rvm, locale, elasticsearch, java (if cloning, just copy them to 
   ``sudo cp ./modules/* /etc/puppet/modules``
+  
+  *NOTES* if elasticsearch doesn't work well, check out this [shellscript](https://gist.github.com/duykhoa/501cf229c9e2804367be)
 - Run these command
 
   ```
