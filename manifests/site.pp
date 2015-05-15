@@ -63,10 +63,6 @@ rvm_system_ruby {
     default_use => true;
 }
 
-class { 'locales':
-  locales => ['en_US.UTF-8 UTF-8']
-}
-
 package {
   "postgresql":
     ensure => present
