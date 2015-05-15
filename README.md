@@ -1,20 +1,27 @@
 # puppet-install-script
 
 ## Manual tasks (will reduce soon)
-1. Install wget 
+1. Install wget
 
-  ``apt-get install wget``
+   ``apt-get install wget``
 - Install puppet
 
   ``apt-get install puppet``
 - Print puppet module folder
   ``puppet config print modulepath``
-- Clone or raw 
+- Clone or raw
 
   ``wget https://raw.githubusercontent.com/duykhoa/puppet-install-script/master/manifests/site.pp``
-- Install module rvm, locale, elasticsearch, java (if cloning, just copy them to 
+
+  **RECOMMEND** ``git clone https://github.com/duykhoa/puppet-install-script.git``
+
+- change startup shell
+  ``chsh /bin/bash deploy``
+  OR
+  ````
+- Install module rvm, locale, elasticsearch, java (if cloning, just copy them to
   ``sudo cp ./modules/* /etc/puppet/modules``
-  
+
   *NOTES* if elasticsearch doesn't work well, check out this [shellscript](https://gist.github.com/duykhoa/501cf229c9e2804367be)
 - Run these command
 
@@ -35,19 +42,25 @@
   ``visudo``
 
   *NOTES*: may fix the default editor first
-    ``vi ~/.profile (or ~/.bashrc): export EDITOR='vi'``
-  add this ``demo    ALL=(ALL:ALL) ALL``
+    ``vi ~/.profile (or ~/.bashrc)``
+
+     ``export EDITOR='vi'``
+
+  add this
+
+  ``demo    ALL=(ALL:ALL) ALL``
 - ssh privilege
 
   ``vi /etc/ssh/sshd_config``
 
-  follow this: 
+  follow this:
 
   ```
-  Port 22 #may change, remember to enable in ufw, otherwise you have a bit trouble
-  PermitRootLogin no #not allow root login
-  UseDNS no
-  AllowUsers demo #user can login :smiley:
+   Port 22 #may change, remember to enable in ufw, otherwise you have a bit trouble
+   PermitRootLogin no #not allow root login
+   UseDNS no
+   PasswordAuthentication no #not allow by password
+   AllowUsers demo #user can login :smiley:
   ```
   then ``reload ssh`` to reload (should open a new ssh connection before do it :trollface:)
 - ufw may not enable, call ``ufw status`` to check, ``ufw enable`` to enable
